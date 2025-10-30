@@ -4,6 +4,26 @@
 
 === Connectors
 
+==== Spindle
+
+#figure(
+  image("images/wiring/spindle.svg", width: 100%),
+  caption: [
+    Wiring of the spindle connector
+  ],
+)
+
+==== 230V Aux
+
+The 230V Aux connector is used to power the water pump. It is connected to the 230V Distribution terminalblock.
+
+#figure(
+  image("images/wiring/230v_aux.svg", width: 100%),
+  caption: [
+    Wiring of the 230V Aux connector
+  ],
+)
+
 ==== Steppers
 
 All stepper cables and connectors are the same, except for the X-axis. In order for it to go in the right direction the first two wires in the terminalblocks had to be switched as you can see in @x-axis-connectors.
@@ -69,7 +89,7 @@ table(
   align: horizon,
   table.header(
 	[*Name*], [*Pin No.*], [*Function*], [*Wire Size [mm²]*], [*Color*]),
-	table.cell(rowspan: 4, [Spindel]), 
+	table.cell(rowspan: 4, [Spindle]), 
     [1], [U], [1.5], cable_color("BK"), 	
 		[2], [V], [1.5], cable_color("BK"), 	
 		[3], [W], [1.5], cable_color("BK"), 	

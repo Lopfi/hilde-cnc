@@ -1,0 +1,43 @@
+connectors:
+  # Cable Connector
+  X1: &GX12 # use generic names here, assign designators at generation time
+    type: GX12-5
+    subtype: female
+    pincount: 5
+    pinlabels: [N, N, PE, L, L]
+    image:
+      src: images/p20a.png
+      height: 70
+
+  # Panel Connector
+  X2:
+    <<: *GX12 # easily create P20's matching connector
+    subtype: male
+    image:
+      src: images/p20h.png
+      height: 70
+  X3:
+    type: Terminal blocks
+    pincount: 9
+    pins: [1, 2_1, 2_2, 3_1, 3_2, 4_1, 4_2, 5_1, 5_2]
+    pinlabels: [L Bridge, L IN, N IN, L, N, L, N, PE, PE]
+
+cables:
+  W1:
+    wirecount: 5
+    color: BK
+    colors: [BU, BU, BN, BN, GNYE]
+    length: 2
+  W2:
+    wirecount: 5
+    colors: [BU, BN, BU, BN, GNYE]
+    category: bundle
+    length: 0.1
+
+connections:
+  - - W1: [1-5]
+    - X1: [1-5]
+    - <=>
+    - X2: [1-5]
+    - W2: [1-5]
+    - X3: [3_1, 4_1, 3_2, 4_2, 5_1]

@@ -3,13 +3,20 @@ connectors:
   X1: &P20 # use generic names here, assign designators at generation time
     type: P20-7
     subtype: female
-    pincount: 8
+    pincount: 7
     pins: [1, 2, 3, 4, 5, 6, 7, housing]
     pinlabels: [A+, A-, Endstop, Ground, Brake, B+, B-, Housing]
+    image:
+      src: images/p20a.png
+      height: 70
+
   # Panel Connector
   X2:
     <<: *P20 # easily create P20's matching connector
     subtype: male
+    image:
+      src: images/p20h.png
+      height: 70
   X3:
     type: Terminal blocks
     pincount: 7

@@ -1,0 +1,42 @@
+connectors:
+  # Cable Connector
+  X1: &P20 # use generic names here, assign designators at generation time
+    type: P20-7
+    subtype: female
+    pincount: 8
+    pins: [1, 2, 3, 4, 5, 6, 7, housing]
+    pinlabels: [A+, A-, Endstop, Ground, Brake, B+, B-, Housing]
+  # Panel Connector
+  X2:
+    <<: *P20 # easily create P20's matching connector
+    subtype: male
+  X3:
+    type: Terminal blocks
+    pincount: 7
+    pins: [1, 2, 3, 4, 5, 6, 7]
+    pinlabels: [A+, A-, B+, B-, Endstop, Ground, Brake]
+
+cables:
+  W1:
+    wirecount: 8
+    color: OG
+    colors: [BK, BK, YE, BK, RD, BK, GNYE, BK]
+    shield: SN
+    length: 2
+  W2:
+    wirecount: 7
+    colors: [BU, BU, VT, BK, BUWH, BU, BU]
+    category: bundle
+    length: 0.1
+
+connections:
+  - - W1: [1, 2, 3, 4, 5, 7, 8]
+    - X1: [1-7]
+    - <=>
+    - X2: [1-7]
+    - W2: [1-7]
+    - X3: [1, 2, 5, 6, 7, 3, 4]
+  - - W1: [6]
+    - X1: [4]
+  - - W1: [s]
+    - X1: [housing]

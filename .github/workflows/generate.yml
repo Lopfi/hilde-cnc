@@ -23,13 +23,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v5
-        with:
-          sparse-checkout: |
-            images/wiring/
-            wiring/
+
       - name: Run WireViz with Custom Options
         uses: AllSpiceIO/run-wireviz@v0.4
         with:
-          files: "./wiring/stepper.yml ./wiring/stepper_x.yml"
+          files: "wiring/stepper.yml wiring/stepper_x.yml"
           format: "s"
-          output_dir: "./images/wiring"
+          output_dir: "images/wiring"
+          workdir: ${{ github.workspace }}

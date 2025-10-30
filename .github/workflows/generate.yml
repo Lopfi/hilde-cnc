@@ -22,7 +22,8 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v5
+      - name: Download Repository
+        uses: actions/checkout@v5
 
       - name: Run WireViz with Custom Options
         uses: AllSpiceIO/run-wireviz@v0.4

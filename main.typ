@@ -9,14 +9,14 @@
 All stepper cables and connectors are the same, except for the X-axis. In order for it to go in the right direction the first two wires in the terminalblocks had to be switched as you can see in @x-axis-connectors.
 
 #figure(
-  image("images/wiring/stepper.png", width: 100%),
+  image("images/wiring/stepper.svg", width: 100%),
   caption: [
     Wiring of the stepper cables for Y, Z and A
   ],
 )
 
 #figure(
-  image("images/wiring/stepper_x.png", width: 100%),
+  image("images/wiring/stepper_x.svg", width: 100%),
   caption: [
     Wiring of the stepper cables for X
   ],

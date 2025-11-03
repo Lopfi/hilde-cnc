@@ -4,7 +4,7 @@ connectors:
     type: GX12-5
     subtype: female
     pincount: 5
-    pinlabels: [N, N, PE, L, L]
+    pinlabels: [GND, GND, Empty, 24V, 24V]
     image:
       src: images/gx12_5_a.png
       height: 70
@@ -18,26 +18,25 @@ connectors:
       height: 70
   X3:
     type: Terminal blocks
-    pincount: 9
-    pins: [1, 2_1, 2_2, 3_1, 3_2, 4_1, 4_2, 5_1, 5_2]
-    pinlabels: [L Bridge, L IN, N IN, L, N, L, N, PE, PE]
+    pincount: 4
+    pins: [1_1, 1_2, 2_1, 2_2]
+    pinlabels: [GND, GND, 24V, 24V]
 
 cables:
   W1:
-    wirecount: 5
-    color: BK
-    colors: [BU, BU, BN, BN, GNYE]
+    wirecount: 4
+    colors: [BK, BK, RD, RD]
     length: 2
   W2:
-    wirecount: 5
-    colors: [BU, BN, BU, BN, GNYE]
+    wirecount: 4
+    colors: [BK, BK, RD, RD]
     category: bundle
     length: 0.1
 
 connections:
-  - - W1: [1-5]
-    - X1: [1-5]
+  - - W1: [1-4]
+    - X1: [1, 2, 4, 5]
     - <=>
-    - X2: [1-5]
-    - W2: [1-5]
-    - X3: [3_1, 4_1, 3_2, 4_2, 5_1]
+    - X2: [1, 2, 4, 5]
+    - W2: [1-4]
+    - X3: [2_1, 2_2, 1_1, 1_2]

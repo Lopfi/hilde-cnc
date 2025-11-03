@@ -1,10 +1,15 @@
-= Hilde CNC
+#set page("a4")
+// --- Title Page ---
+#v(5cm)
+#align(center, text(2em, weight: 700, [Hilde CNC]))
+#v(1cm)
+#align(center, image("images/cnc.png", height: 60%))
 
-== Wiring
+#pagebreak()
 
-=== Connectors
+= Connectors
 
-==== Spindle
+== Spindle
 
 #figure(
   image("images/wiring/spindle.svg", width: 100%),
@@ -13,7 +18,7 @@
   ],
 )
 
-==== 230V Aux
+== 230V Aux
 
 The 230V Aux connector is used to power the water pump. It is connected to the 230V Distribution terminalblock.
 
@@ -24,7 +29,7 @@ The 230V Aux connector is used to power the water pump. It is connected to the 2
   ],
 )
 
-==== Steppers
+== Steppers
 
 All stepper cables and connectors are the same, except for the X-axis. In order for it to go in the right direction the first two wires in the terminalblocks had to be switched as you can see in @x-axis-connectors.
 
@@ -42,7 +47,40 @@ All stepper cables and connectors are the same, except for the X-axis. In order 
   ],
 )<x-axis-connectors>
 
-=== Terminal Blocks
+== Tool Setter
+
+The tool setter one normally open (NO) and one normally closed (NC) contact. The NC contact is used for overtravel and triggers the emergency stop of the controller.
+
+#figure(
+  image("images/wiring/toolsetter.svg", width: 100%),
+  caption: [
+    Wiring of the tool setter connector
+  ],
+)<toolsetter-connector>
+
+== E-Stop
+
+The emergency stop (E-Stop) connector has one normally open (NO) and one normally closed (NC) contact. The NO contact is used to trigger the emergency stop of the controller. The NC switch is used to control a relay that cuts the 230V power to the stepper power supplies and to the VFD for the spindle.
+
+#figure(
+  image("images/wiring/e-stop.svg", width: 100%),
+  caption: [
+    Wiring of the E-Stop connector
+  ],
+)<estop-connector>
+
+== 24V Aux
+
+The 24V Aux connector provides 24V power and ground for auxiliary devices like lights, fans, etc.
+
+#figure(
+  image("images/wiring/24v_aux.svg", width: 100%),
+  caption: [
+    Wiring of the 24V Aux connector
+  ],
+)<24v-aux-connector>
+
+= Terminal Blocks
 
 #let cable_color(color) = (
   if color == "GRYE" {
@@ -133,3 +171,21 @@ table(
 		[3], [GND], [1.5], cable_color("BK"), 	
 		[4], [GND], [1.5], cable_color("BK"), 	
 ), caption: [Terminalblocks - 2])
+
+#set page(flipped: true)
+= Flexi-HAL CNC Controller
+
+Expatria Technologies GRBLHAL and LinuxCNC (and more!) CNC control board
+#figure(
+  image("images/Board_Overview.png", height: 88%),
+  caption: [
+    Pinout Overview
+  ],
+)
+
+#figure(
+  image("images/Pinout.png", width: 100%),
+  caption: [
+    Detailed Pinout
+  ],
+)

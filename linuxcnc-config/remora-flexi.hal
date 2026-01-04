@@ -122,17 +122,17 @@
 
 # Joint 3 setup
 
-	setp flexi.joint.3.scale [JOINT_3]SCALE
-	setp flexi.joint.3.maxaccel [JOINT_3]STEPGEN_MAXACCEL
-	setp flexi.joint.3.pgain [JOINT_3]P_GAIN
-	setp flexi.joint.3.ff1gain [JOINT_3]FF1_GAIN
-	setp flexi.joint.3.deadband [JOINT_3]DEADBAND
+#	setp flexi.joint.3.scale [JOINT_3]SCALE
+#	setp flexi.joint.3.maxaccel [JOINT_3]STEPGEN_MAXACCEL
+#	setp flexi.joint.3.pgain [JOINT_3]P_GAIN
+#	setp flexi.joint.3.ff1gain [JOINT_3]FF1_GAIN
+#	setp flexi.joint.3.deadband [JOINT_3]DEADBAND
 
-	net j3pos-cmd joint.3.motor-pos-cmd => flexi.joint.3.pos-cmd
-	net j3pos-fb flexi.joint.3.pos-fb => joint.3.motor-pos-fb
-	net j3enable joint.3.amp-enable-out => flexi.joint.3.enable
+#	net j3pos-cmd joint.3.motor-pos-cmd => flexi.joint.3.pos-cmd
+#	net j3pos-fb flexi.joint.3.pos-fb => joint.3.motor-pos-fb
+#	net j3enable joint.3.amp-enable-out => flexi.joint.3.enable
 
-	net A-home joint.3.home-sw-in => flexi.input.A_LIMIT
+#	net A-home joint.3.home-sw-in => flexi.input.A_LIMIT
 
 
 # Joint 4 setup
